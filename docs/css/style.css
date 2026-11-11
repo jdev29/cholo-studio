@@ -61,7 +61,7 @@ body, p, .text-muted, .form-control {
     background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 1rem 0;
+    padding: 0rem 0;
     border-bottom: 1px solid rgba(203, 162, 88, 0.2); /* Borde dorado sutil */
 }
 .navbar-brand img { max-height: 70px; transition: var(--transition); }

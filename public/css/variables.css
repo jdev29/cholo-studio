@@ -1,0 +1,20 @@
+:root {
+    /* Paleta de Colores */
+    --bg-dark: #0a0a0a;
+    --bg-darker: #000000;
+    --bg-card: #151515;
+    
+    --text-primary: #ffffff;
+    --text-muted: #888888;
+    
+    /* Color de Acento (Dorado del logo) */
+    --accent-color: #cba258;
+    --accent-hover: #e0b86c;
+    
+    /* Tipografías */
+    --font-headings: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Efectos */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

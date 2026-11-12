@@ -10,19 +10,45 @@ createApp({
 
             heroVideos: [
                 { 
-                    video: 'URL_DEL_VIDEO_1.mp4', 
-                    poster: 'URL_DEL_POSTER_1.jpg' 
+                    video: 'https://cdn.create.vista.com/api/media/medium/138582354/stock-video-classic-retro-camera?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ', 
+                    poster: 'https://cdn.create.vista.com/api/media/small/138582354/stock-video-classic-retro-camera?videoStaticPreview=true&token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ' 
                 },
                 { 
-                    video: 'URL_DEL_VIDEO_2.mp4', 
-                    poster: 'URL_DEL_POSTER_2.jpg' 
+                    video: 'https://cdn.create.vista.com/api/media/medium/300304478/stock-video-close-up-of-vintage-film-camera?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ', 
+                    poster: 'https://cdn.create.vista.com/api/media/medium/300304478/stock-video-close-up-of-vintage-film-camera?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ' 
                 },
-                { 
-                    video: 'URL_DEL_VIDEO_3.mp4', 
-                    poster: 'URL_DEL_POSTER_3.jpg' 
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/23179518/stock-video-wedding-couple-laughing-dancing-on-the-beach?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/23179518/stock-video-wedding-couple-laughing-dancing-on-the-beach?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ"
                 },
-                // ... Pega aquí tus 10 videos ...
-                // { video: '...', poster: '...' },
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/456704168/stock-video-newlywed-wedding-couple-walking-in-the-park-two-young-people-in-love-meet-each-others?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/456704168/stock-video-newlywed-wedding-couple-walking-in-the-park-two-young-people-in-love-meet-each-others?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                },
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/440699000/stock-video-the-bride-with-a-wedding-bouquet-walks-along-the-pier-holding-her-skirt-with-her?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/440699000/stock-video-the-bride-with-a-wedding-bouquet-walks-along-the-pier-holding-her-skirt-with-her?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                },
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/336311848/stock-video-dance-of-brides-at-the-wedding-heavy-smoke-that-is-highlighted-with-white-light-the?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/336311848/stock-video-dance-of-brides-at-the-wedding-heavy-smoke-that-is-highlighted-with-white-light-the?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                },
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/172920448/stock-video-happy-friends-birthday-party-with-candle-celebration-cakes?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/172920448/stock-video-happy-friends-birthday-party-with-candle-celebration-cakes?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                },
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/256831028/stock-video-wedding-couple-lovely-groom-and-bride-happy-family-man-and-woman-in-love?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/256831028/stock-video-wedding-couple-lovely-groom-and-bride-happy-family-man-and-woman-in-love?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                },
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/809870468/stock-video-close-view-three-wedding-rings-surrounded-beautiful-rose-petals-creating?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/809870468/stock-video-close-view-three-wedding-rings-surrounded-beautiful-rose-petals-creating?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                },
+                {
+                    video: "https://cdn.create.vista.com/api/media/medium/324336348/stock-video-timelapse-of-a-part-of-a-glacier-and-mountain-valley-with-rocky-mountains-clouds-are?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                    poster: "https://cdn.create.vista.com/api/media/medium/324336348/stock-video-timelapse-of-a-part-of-a-glacier-and-mountain-valley-with-rocky-mountains-clouds-are?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ",
+                },
             ],
             // Variable que guardará el video seleccionado al azar
             currentHeroVideo: { video: '', poster: '' },
@@ -66,7 +92,7 @@ createApp({
                 this.currentHeroVideo = this.heroVideos[randomIndex];
             }
         },
-        
+
         // --- MÉTODOS NUEVOS PARA EL MENÚ ---
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
@@ -126,6 +152,8 @@ createApp({
         }
     },
     mounted() {
+        this.selectRandomHeroVideo();
+
         // 1. Navbar scroll effect
         $(window).scroll(function() {
             if ($(this).scrollTop() > 50) {

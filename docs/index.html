@@ -62,10 +62,13 @@
 
         <!-- HERO -->
         <section class="hero" id="hero">
-            <!-- Ejemplo: Reemplaza el video actual por uno de un atardecer épico con dron -->
-            <video autoplay muted loop playsinline class="hero-video" poster="https://cdn.create.vista.com/api/media/small/138582354/stock-video-classic-retro-camera?videoStaticPreview=true&token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ">
-                <source src="https://cdn.create.vista.com/api/media/medium/138582354/stock-video-classic-retro-camera?token=v1.nolwQLBKtrkIKbv1TL0Q5nKInqs3EzHBHQKcCf0NcCXXd9NPZaDdAj_n6yYlpwLty-c3VVe9oMjjMBdrnAeAN0KGtbmWnEUrzWKPhN27JHFwN3cHUiWBxx1JAVFRQliqPY50i-bpFQjzYU3puV_7hNvlcopN04iBYsNbVFXhlO6ipzDQflPvjBsUNYoDmeegFbf9EOH-J3JbFUn3yYO7tQ" type="video/mp4">
-            </video>
+            <!-- Video Dinámico con Vue -->
+            <!-- Usamos v-if para que el video solo se renderice cuando ya hay una URL seleccionada -->
+            <template v-if="currentHeroVideo.video">
+                <video autoplay muted loop playsinline class="hero-video" :poster="currentHeroVideo.poster">
+                    <source :src="currentHeroVideo.video" type="video/mp4">
+                </video>
+            </template>
             
             <!-- Capa oscura para que el texto resalte -->
             <div class="hero-overlay"></div>

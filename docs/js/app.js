@@ -7,7 +7,26 @@ createApp({
             activeSection: 'hero',
             isMenuOpen: false,
             lightbox: null,
-            // ... (tus portfolioItems se quedan igual) ...
+
+            heroVideos: [
+                { 
+                    video: 'URL_DEL_VIDEO_1.mp4', 
+                    poster: 'URL_DEL_POSTER_1.jpg' 
+                },
+                { 
+                    video: 'URL_DEL_VIDEO_2.mp4', 
+                    poster: 'URL_DEL_POSTER_2.jpg' 
+                },
+                { 
+                    video: 'URL_DEL_VIDEO_3.mp4', 
+                    poster: 'URL_DEL_POSTER_3.jpg' 
+                },
+                // ... Pega aquí tus 10 videos ...
+                // { video: '...', poster: '...' },
+            ],
+            // Variable que guardará el video seleccionado al azar
+            currentHeroVideo: { video: '', poster: '' },
+
             portfolioItems: [
                 { id: 1, title: '', category: 'fotografia', type: 'image', img: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/853912782_1416901477323271_7368083834929393956_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGpn8788Qx57C5CRntNGr3eXXeR4sRPaMBdd5HixE9owCiiDINOuaAuFZkMZ7-BLD4&_nc_ohc=UJkm-3eXpnEQ7kNvwEgXyDX&_nc_oc=AdqMiSpZvXoE3Qv0MmahNOjdviLeD8-ryuOz_zLHJn_3Q_PRf5DhjYv9oQ9ZhbiAyPM&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=OSIQLZux5PPu7qdbbdpSqw&_nc_ss=7b2a8&oh=00_AQR5EXMKkrbg4qqOUKxDNQqK_XUCH5Nr-Kg-QDlWOWGTNg&oe=6AFA0AF0', fullImage: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/853912782_1416901477323271_7368083834929393956_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGpn8788Qx57C5CRntNGr3eXXeR4sRPaMBdd5HixE9owCiiDINOuaAuFZkMZ7-BLD4&_nc_ohc=UJkm-3eXpnEQ7kNvwEgXyDX&_nc_oc=AdqMiSpZvXoE3Qv0MmahNOjdviLeD8-ryuOz_zLHJn_3Q_PRf5DhjYv9oQ9ZhbiAyPM&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=OSIQLZux5PPu7qdbbdpSqw&_nc_ss=7b2a8&oh=00_AQR5EXMKkrbg4qqOUKxDNQqK_XUCH5Nr-Kg-QDlWOWGTNg&oe=6AFA0AF0' },
                 { id: 2, title: '', category: 'video', type: 'video', img: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=600&auto=format&fit=crop&fm=jpg', fullImage: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' },
@@ -39,6 +58,15 @@ createApp({
         }
     },
     methods: {
+        // --- NUEVO MÉTODO: SELECCIÓN ALEATORIA ---
+        selectRandomHeroVideo() {
+            if (this.heroVideos.length > 0) {
+                // Generamos un índice aleatorio entre 0 y la cantidad de videos
+                const randomIndex = Math.floor(Math.random() * this.heroVideos.length);
+                this.currentHeroVideo = this.heroVideos[randomIndex];
+            }
+        },
+        
         // --- MÉTODOS NUEVOS PARA EL MENÚ ---
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;

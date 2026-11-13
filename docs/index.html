@@ -216,7 +216,7 @@
                                 <i class="fas fa-envelope fa-lg mt-1 me-3" style="color: var(--accent-color); width: 20px; text-align: center;"></i>
                                 <div>
                                     <h6 class="mb-1 text-white">Correo</h6>
-                                    <a href="mailto:contacto@cholostudio.com" class="text-muted small text-decoration-none hover-gold">contacto@cholostudio.com</a>
+                                    <a href="mailto:contacto@cholo-studio.pe" class="text-muted small text-decoration-none hover-gold">contacto@cholo-studio.pe</a>
                                 </div>
                             </div>
 
@@ -244,17 +244,26 @@
                             <form @submit.prevent="sendEmail">
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" v-model="form.name" placeholder="Tu Nombre" required>
+                                        <!-- Cambiado a form.nombre -->
+                                        <input type="text" class="form-control" v-model="form.nombre" placeholder="Tu Nombre" required>
                                     </div>
                                     <div class="col-md-6">
                                         <input type="email" class="form-control" v-model="form.email" placeholder="Tu Correo" required>
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" class="form-control" v-model="form.subject" placeholder="Asunto" required>
+                                        <!-- Cambiado a form.asunto -->
+                                        <input type="text" class="form-control" v-model="form.asunto" placeholder="Asunto" required>
                                     </div>
                                     <div class="col-12">
-                                        <textarea class="form-control" rows="5" v-model="form.message" placeholder="Cuéntame sobre tu idea..." required></textarea>
+                                        <!-- Cambiado a form.mensaje -->
+                                        <textarea class="form-control" rows="5" v-model="form.mensaje" placeholder="Cuéntame sobre tu idea..." required></textarea>
                                     </div>
+                                    
+                                    <!-- HONEYPOT: Campo oculto para atrapar bots. Los humanos no lo ven, los bots sí lo llenan -->
+                                    <div class="col-12 d-none">
+                                        <input type="text" class="form-control" v-model="form.website" placeholder="No llenar este campo">
+                                    </div>
+
                                     <div class="col-12 mt-4">
                                         <button type="submit" class="btn btn-custom w-100" :disabled="loading">
                                             <span v-if="loading">Enviando...</span>

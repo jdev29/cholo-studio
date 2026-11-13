@@ -64,7 +64,7 @@ createApp({
                 { id: 8, title: '', category: 'fotografia', type: 'image', img: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/784919152_1369699078710178_5367818642205335098_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHIFAVfR6SvFet0rvCgwCEYXkz0eXewo5JeTPR5d7Cjkkr7nS4q4qGj1o0FpCsAHow&_nc_ohc=jXCmvT7QoToQ7kNvwEsiqHn&_nc_oc=AdrUpegcrdS17VxXG5MRHF16Ad5baiX1DNeudIA5uX-Gfi_VO8EuQ2mxADFNLT3OrNU&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=z3oo84-hcYFavWJRGRsw9A&_nc_ss=7b2a8&oh=00_AQTtKw-SwAwn6isXGHoaeTx_ii5qthdOjKrXQkUO5L-7Ig&oe=6AFA1E65', fullImage: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/784919152_1369699078710178_5367818642205335098_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHIFAVfR6SvFet0rvCgwCEYXkz0eXewo5JeTPR5d7Cjkkr7nS4q4qGj1o0FpCsAHow&_nc_ohc=jXCmvT7QoToQ7kNvwEsiqHn&_nc_oc=AdrUpegcrdS17VxXG5MRHF16Ad5baiX1DNeudIA5uX-Gfi_VO8EuQ2mxADFNLT3OrNU&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=z3oo84-hcYFavWJRGRsw9A&_nc_ss=7b2a8&oh=00_AQTtKw-SwAwn6isXGHoaeTx_ii5qthdOjKrXQkUO5L-7Ig&oe=6AFA1E65' },
                 { id: 9, title: '', category: 'fotografia', type: 'image', img: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/857961851_1420559023624183_2923686187895204877_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHN8Vr-xLwFakOV-BXQTQOoTnx2vqTW7OxOfHa-pNbs7OHp-RWG_94bsMnYYOQ8YrQ&_nc_ohc=zEFxQGguCbEQ7kNvwE4It8X&_nc_oc=AdpULGjbvRWR7ix1-ZtIBwjKYynGqvAmjkliwZGGUW3lYtgQuoMjUoqKBzeBlLZTuYY&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=1U6Lv_gayzALYjX8MiNy4A&_nc_ss=7b2a8&oh=00_AQSnHXzB4U4nBtsrlPCy8IdVmvbgJC4h4kUob7xrHjrQpA&oe=6AF9F4C8', fullImage: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/857961851_1420559023624183_2923686187895204877_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHN8Vr-xLwFakOV-BXQTQOoTnx2vqTW7OxOfHa-pNbs7OHp-RWG_94bsMnYYOQ8YrQ&_nc_ohc=zEFxQGguCbEQ7kNvwE4It8X&_nc_oc=AdpULGjbvRWR7ix1-ZtIBwjKYynGqvAmjkliwZGGUW3lYtgQuoMjUoqKBzeBlLZTuYY&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=1U6Lv_gayzALYjX8MiNy4A&_nc_ss=7b2a8&oh=00_AQSnHXzB4U4nBtsrlPCy8IdVmvbgJC4h4kUob7xrHjrQpA&oe=6AF9F4C8' },
             ],
-            form: { name: '', email: '', subject: '', message: '' },
+            form: { nombre: '', email: '', asunto: '', mensaje: '', website: '' },
             loading: false,
             responseMessage: '',
             isSuccess: false
@@ -125,31 +125,45 @@ createApp({
             });
         },
         async sendEmail() {
-            // ... (tu función sendEmail se queda igual) ...
             this.loading = true;
             this.responseMessage = '';
+            
+            // Usamos FormData porque el PHP espera variables $_POST
+            const formData = new FormData();
+            formData.append('nombre', this.form.nombre);
+            formData.append('email', this.form.email);
+            formData.append('asunto', this.form.asunto);
+            formData.append('mensaje', this.form.mensaje);
+            formData.append('website', this.form.website); // Honeypot
+
             try {
-                const response = await fetch('php/send-email.php', {
+                // Apuntamos al archivo contacto.php en la misma carpeta
+                const response = await fetch('contacto.php', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(this.form)
+                    body: formData // Enviamos FormData, NO JSON
                 });
+                
+                // Parseamos la respuesta del PHP
                 const result = await response.json();
-                if (result.status === 'success') {
+                
+                // El PHP devuelve result.success (true o false)
+                if (result.success) {
                     this.isSuccess = true;
-                    this.responseMessage = '¡Mensaje enviado con éxito! Te contactaré pronto.';
-                    this.form = { name: '', email: '', subject: '', message: '' };
+                    this.responseMessage = result.message;
+                    // Limpiamos el formulario
+                    this.form = { nombre: '', email: '', asunto: '', mensaje: '', website: '' };
                 } else {
                     this.isSuccess = false;
                     this.responseMessage = result.message || 'Hubo un error al enviar.';
                 }
             } catch (error) {
+                console.error("Error en fetch:", error);
                 this.isSuccess = false;
                 this.responseMessage = 'Error de conexión. Intenta de nuevo.';
             } finally {
                 this.loading = false;
             }
-        }
+        },
     },
     mounted() {
         this.selectRandomHeroVideo();

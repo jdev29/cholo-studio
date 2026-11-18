@@ -586,3 +586,35 @@ body, p, .text-muted, .form-control {
 body.menu-open {
     overflow: hidden !important;
 }
+
+/* =========================================
+   FOOTER Y CRÉDITOS
+   ========================================= */
+.footer-credit a {
+    color: var(--text-primary); /* Blanco inicial */
+    text-decoration: none;
+    font-weight: 600; /* Un poco más de peso para que destaque sutilmente */
+    position: relative;
+    transition: var(--transition);
+}
+
+/* La línea dorada animada debajo del texto */
+.footer-credit a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+/* Efecto Hover */
+.footer-credit a:hover {
+    color: var(--accent-color);
+}
+.footer-credit a:hover::after {
+    width: 100%;
+}

@@ -3,19 +3,23 @@
 /* Desplazamiento suave nativo */
 html {
     scroll-behavior: smooth;
-}
-
-/* Evita que el navbar fijo tape los títulos de las secciones */
-section {
-    scroll-margin-top: 80px;
+    background-color: var(--bg-dark);
+    max-width: 100%;
+    overflow-x: hidden; /* Escudo protector contra scroll horizontal */
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-primary);
     font-family: var(--font-body);
-    overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden; /* Escudo protector contra scroll horizontal */
     -webkit-font-smoothing: antialiased;
+}
+
+/* Evita que el navbar fijo tape los títulos de las secciones */
+section {
+    scroll-margin-top: 80px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,18 +58,64 @@ body, p, .text-muted, .form-control {
    NAVBAR
    ========================================= */
 .navbar {
-    transition: var(--transition);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Asegura que esté por encima de todo el contenido */
+    
+    transition: padding 0.3s ease;
     padding: 1.5rem 0;
+    background: transparent; 
 }
-.navbar.scrolled {
+
+/* El pseudo-elemento maneja el fondo, el blur y el borde */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 0rem 0;
-    border-bottom: 1px solid rgba(203, 162, 88, 0.2); /* Borde dorado sutil */
+    border-bottom: 1px solid rgba(203, 162, 88, 0.2);
+    z-index: -1;
+    
+    /* La magia: animamos SOLO la opacidad */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    
+    /* Forzamos a la tarjeta gráfica a renderizar esto por separado */
+    will-change: opacity;
+    transform: translateZ(0); 
 }
-.navbar-brand img { max-height: 70px; transition: var(--transition); }
-.navbar.scrolled .navbar-brand img { max-height: 80px; }
+
+/* Al hacer scroll, el fondo aparece suavemente */
+.navbar.scrolled::before {
+    opacity: 1;
+}
+
+/* Ajustamos el padding al hacer scroll (ya no llega a 0 para que no colapse) */
+.navbar.scrolled {
+    padding: 0.5rem 0;
+}
+
+/* Aseguramos que el logo y menú estén por encima del fondo */
+.navbar .container {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-brand img { 
+    max-height: 70px; 
+    transition: max-height 0.3s ease; 
+}
+.navbar.scrolled .navbar-brand img { 
+    max-height: 55px; 
+}
+
 .nav-link {
     color: var(--text-primary) !important;
     text-transform: uppercase;
@@ -73,7 +123,7 @@ body, p, .text-muted, .form-control {
     letter-spacing: 1px;
     font-weight: 600;
     position: relative;
-    transition: var(--transition);
+    transition: color 0.3s ease;
 }
 .nav-link::after {
     content: '';
@@ -83,7 +133,7 @@ body, p, .text-muted, .form-control {
     width: 0;
     height: 2px;
     background: var(--accent-color);
-    transition: var(--transition);
+    transition: width 0.3s ease, transform 0.3s ease;
     transform: translateX(-50%);
 }
 .nav-link:hover::after, .nav-link.active::after { width: 80%; }
